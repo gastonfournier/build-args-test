@@ -2,12 +2,15 @@
 
 When using a BUILD_ARG_PARAM that includes a hastag `#` it's trimmed out from the parameter sent to the docker command:
 
-In the [following build](https://github.com/gastonfournier/build-args-test/actions/runs/5243652991/jobs/9468613641)
+In the [following build](https://github.com/gastonfournier/build-args-test/actions/runs/5243723251/jobs/9468774478#step:6:112)
 
 where it says
-`/usr/bin/docker buildx build --build-arg NPM_TOKEN=HELLO_WORLD --build-arg BUILD_ARG_PARAM=pre-hashtag --file Dockerfile --iidfile /tmp/docker-actions-toolkit-tU4tBo/iidfile --platform linux/arm64 `
+
+`/usr/bin/docker buildx build --build-arg NPM_TOKEN=HELLO_WORLD --build-arg BUILD_ARG_PARAM=pre-hashtag --file Dockerfile --iidfile /tmp/docker-actions-toolkit-d9yU9i/iidfile --platform linux/arm64`
+
 it should be:
-`/usr/bin/docker buildx build --build-arg NPM_TOKEN=HELLO_WORLD --build-arg BUILD_ARG_PARAM=pre-hashtag#post-hashtag --file Dockerfile --iidfile /tmp/docker-actions-toolkit-tU4tBo/iidfile --platform linux/arm64 `
+
+`/usr/bin/docker buildx build --build-arg NPM_TOKEN=HELLO_WORLD --build-arg BUILD_ARG_PARAM=pre-hashtag#post-hashtag --file Dockerfile --iidfile /tmp/docker-actions-toolkit-tU4tBo/iidfile --platform linux/arm64`
 
 ```
 Run docker/build-push-action@v4
