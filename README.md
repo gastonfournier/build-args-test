@@ -40,3 +40,7 @@ WARNING: No output specified with docker-container driver. Build result will onl
 #1 transferring dockerfile: 2B done
 #1 DONE 0.0s
 ```
+
+# Solution
+
+Using the previous release of build-push-action works as expected: https://github.com/gastonfournier/build-args-test/actions/runs/5243759130/jobs/9468854248#step:6:120
